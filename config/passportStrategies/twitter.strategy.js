@@ -20,7 +20,8 @@ module.exports = (passport, User) => {
             done(null, userExists);
           } else {
             new User({
-              twitterId: profile.id
+              twitterId: profile.id,
+              twitterName: profile.displayName
             })
               .save()
               .then(user => {
